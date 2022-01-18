@@ -76,10 +76,7 @@ function media(notas) {
 const mediaTurma = media(notas);
 console.log(`Média é ${mediaTurma}`);
 
-const mediaTurma = dividir(
-    notas.reduce(somar),
-    notas.length
-)
+const mediaTurma = dividir(notas.reduce(somar), notas.length);
 
 console.log(`Média é ${mediaTurma}`);
-``` 
+```
