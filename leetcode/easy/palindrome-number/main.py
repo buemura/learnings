@@ -1,24 +1,17 @@
 class Solution:
     def isPalindrome(self, x: int) -> bool:
         if x < 0: return False
-        
-        div = 1
-        
-        while x >= 10* div:
-            div *= 10
 
-        while x:
-            right = x % 10
-            left = x // div
+        num = x
+        rev = 0
 
-            if left != right: return False
+        while x > 0:
+           last_digit = x%10
+           rev = (rev*10) + last_digit
+           x = x // 10
 
-            x = (x % div) // 10 # type: ignore
-            div = div / 100
-
-        return True
+        return num == rev
     
 
-sol = Solution()
-res = sol.isPalindrome(121)
+res = Solution().isPalindrome(1221)
 print(res)
