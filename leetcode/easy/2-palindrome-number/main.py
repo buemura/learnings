@@ -13,5 +13,4 @@ class Solution:
         return num == rev
     
 
-res = Solution().isPalindrome(1221)
-print(res)
+print(Solution().isPalindrome(1221))
