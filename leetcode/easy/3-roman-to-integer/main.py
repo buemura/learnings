@@ -11,13 +11,24 @@ class Solution:
         }
 
         res = 0
-        for c in s:
+        i = 0
 
-            res += roman[c]
+        while i <= len(s) -1:
+            if i == len(s) -1:
+                res += roman[s[i]]
+                break
+
+            if roman[s[i]] < roman[s[i+1]]:
+                res += roman[s[i+1]] - roman[s[i]]
+                i += 2
+            else:
+                res += roman[s[i]]
+                i += 1
 
         return res
     
 
+print(Solution().romanToInt("V")) # 5
 print(Solution().romanToInt("III")) # 3
 print(Solution().romanToInt("LVIII")) # 58
 print(Solution().romanToInt("MCMXCIV")) # 1994
